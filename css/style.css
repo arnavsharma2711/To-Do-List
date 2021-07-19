@@ -181,7 +181,7 @@ Animation Section
 .header{
     width: 380px;
     height:200px;
-    background-image: url('img/BG.jpg');
+    background-image: url('../img/BG.jpg');
     background-size: 100% 200%;
     border-radius: 15px 15px 0 0;
     position: relative;
