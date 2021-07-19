@@ -1,0 +1,350 @@
+/* ------------ youtube.com/CodeExplained ------------ */
+body{
+    padding: 20px;
+    margin: 0;
+    background: #6f97dd;
+    background: -webkit-radial-gradient(top right, #6f97dd, #7FB1AF);
+    background: -moz-radial-gradient(top right, #6f97dd, #7FB1AF);
+    background: radial-gradient(to bottom left, #6f97dd, #7FB1AF);
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.bg-effect{
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: calc(100% - 30px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+.effect-wrap .effect{
+    position: absolute;
+    z-index: -1;
+}
+.effect-1{
+    width: 30px;
+    height: 30px;
+    border:4px solid #8a49ff;
+    right: 10%;
+    bottom: 10%;
+    animation: spin 10s linear infinite;
+}
+.effect-2{
+    left: 10%;
+    bottom: 10%;
+    width: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    animation:  topBounce 3s ease-in-out infinite;
+}
+.effect-2 div{
+    width: 4px;
+    height: 4px;
+    background-color: #8a49ff;
+    margin:0 3px 8px;
+}
+.effect-3{
+    width: 180px;
+    height: 180px;
+    border:25px yellow;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    animation: leftBounce 3s ease-in-out infinite;
+}
+.effect-4{
+    border-top: 50px solid transparent;
+    border-left: 50px solid #008000;
+    right: 10%;
+    top: 10%;
+    animation: spin 15s 
+    linear infinite;
+}
+.effect-4:before{
+    content: '';
+    border-top: 50px solid transparent;
+    border-left: 50px solid #008000;
+    position: absolute;
+    left: -45px;
+    top: -55px;
+    opacity: 0.5;
+}
+.effect-6{
+    bottom: 50%;
+    left: 22%;
+    border-left: 0;
+    border-top: 0;
+    animation:  rSpin 7s linear infinite;    
+}
+.effect-6-1{
+    width: 15px;
+    height: 15px;
+    border: 4px solid #1aff1a;
+    bottom: 20%;
+    left: 35%;
+    border-left: 0;
+    border-top: 0;
+    transform: rotate(225deg); 
+}
+.effect-6-2{
+    width: 15px;
+    height: 15px;
+    border: 4px solid #1aff1a;
+    bottom: 19%;
+    left: 35%;
+    border-left: 0;
+    border-top: 0;
+    transform: rotate(45deg);  
+}
+.effect-7 {
+    background:#F08080;
+    border-radius: 50%;
+    bottom: 50%;
+    right: 20%;
+    width: 60px;
+    height: 60px;
+    animation: diagonalBounce 3s ease-in-out infinite;
+}
+.effect-8{
+    width: 70px;
+    height: 70px;
+    border:8px solid #C71585;
+    left: 5%;
+    top: 10%;
+    animation: rSpin 20s linear infinite;
+}
+/*--------------------------------------------------------------
+Animation Section
+--------------------------------------------------------------*/
+@keyframes fadeOut{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes spin{
+    0%{
+        transform:  rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes topBounce{
+    0%,100%{
+        transform:  translateY(0);
+    }
+    50%{
+        transform:  translateY(25px);        
+    }
+}
+@keyframes leftBounce{
+    0%,100%{
+        transform:  translateX(0);
+    }
+    50%{
+        transform:  translateX(25px);        
+    }
+}
+@keyframes diagonalBounce{
+    0%       { transform: translatex(-30px) translatey(-30px) }
+    50%      { transform: translatex(20px) translatey(20px); }
+    100%     { transform: translatex(-30px) translatey(-30px) }
+}
+@keyframes rSpin{
+    0%{
+        transform:  rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+/* ------------ container ------------ */
+.container{
+    padding:10px;
+    width:380px;
+    margin:0 auto;
+}
+
+/* ------------ header ------------ */
+.header{
+    width: 380px;
+    height:200px;
+    background-image: url('../img/bg.jpg');
+    background-size: 100% 200%;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+}
+.clear{
+    width : 30px;
+    height: 30px;
+    position: absolute;
+    right:20px;
+    top: 20px;
+}
+.clear i{
+    font-size: 30px;
+    color: #FFF;
+    transition: all 0.8s;
+}
+.clear i:hover{
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+#date{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #FFF;
+    font-size: 25px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+/* ------------ content ------------ */
+.content{
+    width:380px;
+    height: 350px;
+    max-height:350px;    
+    backdrop-filter: blur(5px);
+    background-color: rgba(255,255,255, 0.25);
+    overflow: auto;
+}
+.content::-webkit-scrollbar { 
+    display: none; 
+}
+.content ul{
+    padding:0;
+    margin:0;
+}
+.item{
+    width:380px;
+    height: 45px;
+    min-height: 45px;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.item i.co{
+    position: absolute;
+    font-size: 25px;
+    padding-left:5px;
+    left:15px;
+    top:10px;
+}
+.item i.co:hover{
+    cursor: pointer;
+}
+.fa-check-circle{
+    color:#1aff1a;
+}
+.item p.text{
+    position: absolute;
+    padding:0;
+    margin:0;
+    font-size: 20px;
+    left:50px;
+    top:5px;
+    max-width:285px;
+}
+.lineThrough{
+    color : #D0D3D4;
+    text-decoration: line-through;
+}
+.item i.de{
+    position: absolute;
+    font-size: 25px;
+    right:15px;
+    top:10px;
+}
+.item i.de:hover{
+    color:#ff0000;
+    cursor: pointer;
+}
+/* ------------ add item ------------ */
+.add-to-do{
+    position: relative;
+    width: 360px;
+    height:40px;
+    padding: 10px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+    background-color: rgba(255,255,255, 0.25);
+    border-radius: 0 0 15px 15px;
+}
+.add-to-do i{
+    position: absolute;
+    font-size: 40px;
+    color: #000;
+}
+
+.add-to-do input{
+    position: absolute;
+    left: 50px;
+    height: 35px;
+    width: 310px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    padding-left:10px;
+}
+.add-to-do input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #000;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+}
+.add-to-do input::-moz-placeholder { /* Firefox 19+ */
+    color: #000;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+}
+.add-to-do input:-ms-input-placeholder { /* IE 10+ */
+    color: #000;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+}
+.add-to-do input:-moz-placeholder { /* Firefox 18- */
+    color: #000;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
