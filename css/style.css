@@ -180,11 +180,21 @@ Animation Section
 /* ------------ header ------------ */
 .header{
     width: 380px;
-    height:200px;
-    background-image: url('../img/bg.jpg');
+    height:200px;    
+    backdrop-filter: blur(5px);
+    background-color: rgba(255,255,255, 0.5);
     background-size: 100% 200%;
     border-radius: 15px 15px 0 0;
     position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+img{
+    z-index: -1;
+    width: 180px;
+    position: absolute;
+    right:20px;
+    top: 20px;
+    transform: rotate(5deg);
 }
 .clear{
     width : 30px;
@@ -217,7 +227,7 @@ Animation Section
     height: 350px;
     max-height:350px;    
     backdrop-filter: blur(5px);
-    background-color: rgba(255,255,255, 0.25);
+    background-color: rgba(255,255,255, 0.5);
     overflow: auto;
 }
 .content::-webkit-scrollbar { 
@@ -281,7 +291,7 @@ Animation Section
     padding: 10px;
     border-top: 1px solid rgba(0,0,0,0.1);
     backdrop-filter: blur(5px);
-    background-color: rgba(255,255,255, 0.25);
+    background-color: rgba(255,255,255, 0.5);
     border-radius: 0 0 15px 15px;
 }
 .add-to-do i{
